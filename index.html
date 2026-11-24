@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scheduling Management System | LCCN</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- LOGIN PAGE -->
+    <div class="overlay">
+
+        <div class="left-side">
+            <h3>COLLEGE DEPARTMENT</h3>
+            <h1>SCHEDULING</h1>
+            <h1 class="highlight">MANAGEMENT SYSTEM</h1>
+        </div>
+
+        <div class="login-card">
+
+            <img src="images/logo.png" class="logo" alt="LCCN Logo">
+
+            <h2>Welcome!</h2>
+            <p>Please enter your details to login</p>
+
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                    required>
+
+                <div class="password-container">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword()"
+                        aria-label="Show password">
+
+                        <i class="fa-solid fa-eye" id="loginEye"></i>
+
+                    </button>
+
+                </div>
+
+                <a href="#" class="forgot">Forgot Password?</a>
+
+                <button type="submit" class="login-button">
+                    LOG IN
+                </button>
+
+            </form>
+
+            <p class="signup">
+                Don't have an account?
+                <a href="#" onclick="openSignup(); return false;">Sign Up</a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SIGN UP MODAL -->
+    <div class="modal-overlay" id="signupModal">
+
+        <div class="signup-modal">
+
+            <button
+                type="button"
+                class="close-modal"
+                onclick="closeSignup()"
+                aria-label="Close modal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="modal-header">
+
+                <img src="images/logo.png" alt="LCCN Logo">
+
+                <h2>Create Student Account</h2>
+                <p>Fill in your information to register</p>
+
+            </div>
+
+            <form id="signupForm">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="full_name"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">LCCN Email</label>
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        name="email"
+                        placeholder="Enter your LCCN email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="09XXXXXXXXX"
+                        pattern="09[0-9]{9}"
+                        maxlength="11"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentNo">Student No.</label>
+                    <input
+                        type="text"
+                        id="studentNo"
+                        name="student_no"
+                        placeholder="Enter your student number"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            name="password"
+                            placeholder="Create password"
+                            minlength="8"
+                            required>
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="toggleSignupPassword()"
+                            aria-label="Show signup password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirm_password"
+                            placeholder="Confirm password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="toggleConfirmPassword()"
+                            aria-label="Show confirm password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="assessmentForm">Upload Assessment Form</label>
+
+                    <div class="upload-box">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <p id="fileName">Click to upload assessment form</p>
+
+                        <span>PDF, JPG or PNG (Maximum 5MB)</span>
+
+                        <input
+                            type="file"
+                            id="assessmentForm"
+                            name="assessment_form"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required>
+
+                    </div>
+                </div>
+
+                <button type="submit" class="signup-button">
+                    SIGN UP
+                </button>
+
+            </form>
+
+            <p class="modal-login">
+                Already have an account?
+                <a href="#" onclick="closeSignup(); return false;">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+
+/* ==============================
+   GLOBAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background:
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+        url('../images/background.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   LOGIN LAYOUT
+============================== */
+
+.overlay {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+}
+
+.left-side {
+    color: white;
+}
+
+.left-side h3 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.left-side h1 {
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.left-side p {
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    color: #e5d148;
+}
+
+
+/* ==============================
+   LOGIN CARD
+============================== */
+
+.login-card {
+    width: 400px;
+    max-width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.login-card h2 {
+    color: #1f3d7a;
+    margin-bottom: 8px;
+}
+
+.login-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.login-card input:focus {
+    border-color: #233b6e;
+}
+
+
+/* ==============================
+   PASSWORD EYE ICON
+============================== */
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 48px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 40px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    color: #1f3d7a;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.password-toggle:hover {
+    background: transparent;
+    color: #14284f;
+}
+
+
+/* HIDE EDGE BUILT-IN PASSWORD EYE */
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+
+/* ==============================
+   FORGOT PASSWORD
+============================== */
+
+.forgot {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 13px;
+    color: #1f3d7a;
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.login-button,
+.signup-button {
+    width: 100%;
+    padding: 14px;
+    background: #233b6e;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login-button:hover,
+.signup-button:hover {
+    background: #14284f;
+}
+
+
+/* ==============================
+   SIGNUP LINK
+============================== */
+
+.signup {
+    margin-top: 15px;
+}
+
+.signup a {
+    color: #233b6e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   SIGNUP MODAL OVERLAY
+============================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+
+/* ==============================
+   SIGNUP MODAL BOX
+============================== */
+
+.signup-modal {
+    position: relative;
+    background: white;
+    width: 500px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.modal-header img {
+    width: 75px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.modal-header h2 {
+    color: #1f3d7a;
+    margin-bottom: 8px;
+}
+
+.modal-header p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   FORM GROUPS
+============================== */
+
+.form-group {
+    text-align: left;
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #233b6e;
+}
+
+
+/* PASSWORD INPUT IN MODAL */
+
+.form-group .password-container input {
+    padding-right: 48px;
+}
+
+
+/* ==============================
+   CLOSE MODAL BUTTON
+============================== */
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    background: transparent;
+    color: #555;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background: transparent;
+    color: #d00;
+}
+
+
+/* ==============================
+   FILE UPLOAD
+============================== */
+
+.upload-box {
+    position: relative;
+    border: 2px dashed #b8c4d8;
+    background: #f8f9fc;
+    border-radius: 10px;
+    padding: 22px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.upload-box:hover {
+    border-color: #233b6e;
+    background: #f0f4fc;
+}
+
+.upload-box > i {
+    font-size: 30px;
+    color: #233b6e;
+    margin-bottom: 10px;
+}
+
+.upload-box p {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.upload-box span {
+    color: #888;
+    font-size: 12px;
+}
+
+.upload-box input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   MODAL LOGIN LINK
+============================== */
+
+.modal-login {
+    margin-top: 18px;
+    color: #666;
+    font-size: 14px;
+}
+
+.modal-login a {
+    color: #233b6e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+    .overlay {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .left-side h1 {
+        font-size: 45px;
+    }
+
+    .left-side h3 {
+        font-size: 22px;
+    }
+
+    .left-side p {
+        font-size: 15px;
+    }
+
+    .login-card {
+        width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 25px;
+    }
+
+    .left-side h1 {
+        font-size: 32px;
+    }
+
+    .left-side h3 {
+        font-size: 18px;
+    }
+
+    .signup-modal {
+        padding: 30px 20px;
+    }
+}
